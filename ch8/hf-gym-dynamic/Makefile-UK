@@ -1,0 +1,7 @@
+.DEFAULT_GOAL := libhfcal.dylib
+hfcal_UK.o : hfcal_UK.c
+	gcc -c -I./include -fPIC hfcal_UK.c -o hfcal_UK.o
+
+
+libhfcal.dylib : hfcal_UK.o
+	gcc -shared hfcal_UK.o -o libs/libhfcal.dylib
