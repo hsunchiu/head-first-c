@@ -5,10 +5,13 @@
 #include <errno.h>
 
 int main(int argc, char* argv[]){
-	char* feeds[] = {"http://www.cnn.com/rss/celebs.xml",
-		"http://www.rollingstone.com/rock.xml",
-		"http://eonline.com/gossip.xml"
-	};
+	char* feeds[] = {
+                "http://rss.cnn.com/rss/edition_world.rss",
+                "https://feeds.npr.org/15709577/rss.xml",
+                "https://hnrss.org/newest",
+        };
+	
+
 
 	int times = 3;
 
@@ -26,7 +29,7 @@ int main(int argc, char* argv[]){
 			if (execle("/usr/bin/python", "/usr/bin/python",
 						"./rssgossip.py", phrase, NULL, vars) == -1) {
 				fprintf(stderr, "Can't run stript: %s\n", strerror(errno));
-				return -1;
+				return 1;
 			}
 		}
 	}

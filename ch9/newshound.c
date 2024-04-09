@@ -5,15 +5,16 @@
 #include <errno.h>
 
 int main(int argc, char* argv[]){
-	char* feeds[] = {"http://www.cnn.com/rss/celebs.xml",
-		"http://www.rollingstone.com/rock.xml",
-		"http://eonline.com/gossip.xml"
+	/* the rss link in the book are all the dead link. I change them. */
+	char* feeds[] = {
+		"http://rss.cnn.com/rss/edition_world.rss",
+		"https://feeds.npr.org/15709577/rss.xml",
+		"https://hnrss.org/newest",
 	};
 
-	int times = 3;
 
 	char * phrase = argv[1];
-	for (int i = 0; i < times; ++i){
+	for (int i = 0; i < sizeof(feeds)/sizeof(feeds[0]); ++i){
 		char var[255];
 		sprintf(var,"RSS_FEED=%s", feeds[i]);
 		char * vars[] = { var, NULL };
