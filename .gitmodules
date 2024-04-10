@@ -1,0 +1,3 @@
+[submodule "c-lab-3/blasteroid"]
+	path = c-lab-3/blasteroid
+	url = https://github.com/onesuper/blasteroid.git
